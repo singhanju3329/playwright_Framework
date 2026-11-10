@@ -7,6 +7,20 @@ node_modules/
 /playwright/.cache/
 /playwright/.auth/
 
-# Secrets
+# Env
 .env
+
+# Generated reports
+/tta-report/
+/reports/
+/allure-results/
+/allure-report/
+
+# macOS
+.DS_Store
+
+# Logs (src/utils/logger.ts)
+/logs/
+
+# Saved login state
 user-session.json
