@@ -20,6 +20,10 @@ export class LoginPage extends BasePage {
     private readonly loginButton: Locator;
     private readonly errorBox: Locator;
     private readonly loginCredentialsHint: Locator;
+    readonly username: Locator;
+    readonly password: Locator;
+    readonly submit: Locator;
+
 
     constructor(page: Page) {
         super(page, 'LoginPage');
@@ -28,6 +32,9 @@ export class LoginPage extends BasePage {
         this.loginButton = page.locator('[data-test="login-button"]');
         this.errorBox = page.locator('[data-test="error"]');
         this.loginCredentialsHint = page.locator('[data-test="login-credentials"]');
+        this.username = page.locator('//input[@name="email"]');
+        this.password = page.locator('//input[@name="password"]');
+        this.submit = page.locator('//button[@id="loginSubmit"]')
     }
 
     async open(): Promise<void> {
@@ -45,6 +52,9 @@ export class LoginPage extends BasePage {
         )).toBe(true);
     }
 
+    async login(username: string, password: string): promise<void> {
+        this.username()
+    }
     async waitForLoginButtonHidden(): Promise<void> {
         await this.el.waitForHidden(this.loginButton);
     }

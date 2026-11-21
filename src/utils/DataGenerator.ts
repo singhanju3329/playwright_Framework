@@ -112,6 +112,11 @@ export class DataGenerator {
         return faker.helpers.arrayElement(items);
     }
 
+    /** Short note for a bank transfer, e.g. "Payment for coffee". */
+    static transferNote(): string {
+        return `Payment for ${faker.commerce.productName().toLowerCase()}`;
+    }
+
     // ---------- composites ----------
 
     /** Customer info for the TTACart checkout step-one form. */

@@ -15,6 +15,7 @@ test('Verify Advance Custom DropDowns', async ({ page }) => {
 
   await vechileFrame.getByText('Submit registration', { exact: true }).click();
 
+
   let output = await vechileFrame.locator("#vehicle-output").innerText();
   console.log(output);
   await page.pause();
